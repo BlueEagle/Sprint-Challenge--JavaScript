@@ -17,8 +17,23 @@ function myFunction() {
 myFunction();
 
 // Explanation: 
-
+/*
+  nestedFunction is a property within the scope of myFunction. In Javascript functions may access any properties within their parent's scope.
+  When nestedFunction accesses internal, the computer first checks if it is a property of nestedFunction, then it finds it in myFunction.
+*/
 
 /* Task 2: Counter */
 
 /* Create a function called `sumation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
+function sumation(number) {
+  function addUpTo(number) {
+    let counter = 0;
+    for (let i=1; i<=number; i++) {
+      counter += i;
+    }
+    return counter;
+  }
+
+  return addUpTo(number);
+}
+// console.log(sumation(4));
